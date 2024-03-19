@@ -1,0 +1,45 @@
+
+#nav{
+    position: sticky;
+    top: 0;
+    background-color: #14191f;
+    z-index: 1;
+
+}
+#nav a:hover{
+    color: orange ;
+    font-size: 18px;
+    transition: 2s;
+    text-decoration: underline;
+    font-family: cursive;
+}
+
+#search{
+    border-radius: 10px;
+}
+/*--------------------------*/
+
+#main{
+    z-index: 2;
+}
+/*
+#sectext{
+    background-image: url(../Image/Acess2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*
+#lazone{
+    background-image: url(../Image/zone.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/*--------------------------*/
+
+#footer{
+    position: relative;
+    background-color: #14191f;
+}
