@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Inscription</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="d-flex flex-column align-items-center ">
+    <div class="d-flex  mt-2 ">
+        <a class="navbar-brand text-light" href="Clinique.html">
+            <img src="Image/Logo.png" width="60" height="60" class="d-inline-block align-top" alt="">
+        </a>
+    </div>
+    <div class="d-flex  mt-2 ">
+        <p>WELCOME BACK</p>
+    </div>
+    <section class="d-flex justify-content-center w-50  mb-3">
+        <form action="Php/insc.php" method="post" class="d-flex flex-column border-left border-right col-md-8 p-2 ">
+
+            <div class=" mb-3">
+                <label for="validationDefault01">First name</label>
+                <input type="text" name="Fname" class="form-control" id="validationDefault01" placeholder="First name"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="validationDefault02">Last name</label>
+                <input type="text" name="Lname" class="form-control" id="validationDefault02" placeholder="Last name"
+                    required>
+            </div>
+
+
+            <div class=" mb-3">
+                <label for="validationDefault03">Old</label>
+                <input type="number" name="Old" class="form-control" id="validationDefault03" placeholder="Old" min="1"
+                    required>
+            </div>
+            <div class="mb-3 d-flex">
+                <div class="mb-3 mr-5">
+                    <label for="validationDefault04">Sexe</label>
+                    <select name="Sexe" id="">
+                        <option value="M">M</option>
+                        <option value="F">F</option>
+                    </select>
+                </div>
+                <div class="ml-auto">
+                    <label for="validationDefault05">City</label>
+                    <select name="City" id="">
+                        <option value="D">Dakar</option>
+                        <option value="R">Rufisque</option>
+                        <option value="G">Guediawaye</option>
+                        <option value="S">Sebikotane</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class=" mb-3">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" name="Gmail" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class=" mb-3">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" name="Mdp" class="form-control" id="exampleInputPassword1"
+                    placeholder="Password">
+            </div>
+            <div class=" mb-3">
+                <label for="exampleInputPassword2">Password</label>
+                <input type="password" name="Conf_Mdp" class="form-control" id="exampleInputPassword1"
+                    placeholder="Confirm">
+            </div>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-primary " type="submit" name="Insc">Continue</button>
+            </div>
+        </form>
+    </section>
+    <div class="d-flex justify-content-center align-items-center w-100 mt-3 p-0 ">
+        <div class="d-flex  w-25 mr-0 ">
+            <hr class="w-25 mr-0 mt-0">
+        </div>
+        <p class=" mx-2 text-success">OR</p>
+        <div class="d-flex  w-25 ml-0 ">
+            <hr class="w-25 ml-0 mt-0">
+        </div>
+    </div>
+    <div class=" d-flex justify-content-center align-items-center">
+        <p>Are you a new? <a href="Se_connecter.html">Log In</a></p>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
