@@ -1,0 +1,176 @@
+#bg {
+    background-image: url(../Image/Bg/blanc_perso.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#nav {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) -125.34%, rgba(0, 0, 0, 0.12) 116.05%);
+    z-index: 1;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.clinique{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#nav a:hover{
+    color: orange ;
+    font-size: 18px;
+    transition: 2s;
+    text-decoration: underline;
+    font-family: cursive;
+}
+
+#search{
+    border-radius: 10px;
+}
+
+
+#ChoixZone{
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+
+}@keyframes slideInTitre {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+        font-size: 24px;
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+        font-size: 60px;
+    }
+    100% {
+        font-size: 30px;
+    }
+}
+
+#animationTitre {
+    animation: slideInTitre 3s ease forwards;
+    animation-delay: 0s; 
+    cursor: pointer;
+}
+
+@keyframes slideInText {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+        font-size: 8px; 
+    }
+    50% {
+        opacity: 2; 
+        transform: translateX(0); 
+        font-size: 30px; 
+    }
+    100% {
+        opacity: 1; 
+        font-size: 14px; 
+    }
+}
+
+#animationText {
+    animation: slideInText 3s ease forwards;
+    animation-delay: 3s; 
+    opacity: 0; 
+
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0px) rotateX(20deg) rotateY(25deg) opacity(0116.05%); opacity: 0.3;}
+    50% { transform: translateY(-75px) rotateX(20deg) rotateY(25deg); opacity: 0;}    
+  }
+  
+ 
+  
+  .bounce {
+    animation: bounce 20s infinite alternate;
+    animation-delay: 6s; 
+    opacity: 0; 
+
+
+  }
+
+#main{
+    z-index: 2;
+}
+
+#textandslide{
+    background-image: url(../Image/);
+    background-repeat: no-repeat;
+    background-size: 200px;
+}
+
+.carousel-item {
+    transition-duration: 1s; 
+}
+
+.h1_slide{
+    font-family: Archivo, sans-serif;
+    font-size: 10rem;
+    color: #42c4f0;
+    font-weight: 700;
+    font-weight: Bold;
+    line-height: 1;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.img_slide{
+    border-radius: 50%;
+}
+
+.slick-slide {
+    /* Set the height of each slide */
+    line-height: 10vh;
+    /* Vertically center the text */
+    color: black !important;
+    font-size: 2vw;
+}
+
+.your-class {
+    display: flex;
+    /* Utiliser flexbox */
+    align-items: center;
+    /* Centrer verticalement */
+    justify-content: center;
+    /* Centrer horizontalement */
+    height: 10vh;
+    overflow: hidden;
+    
+    /* Pour cacher le contenu qui dépasse */
+}
+
+#footer{
+    position: relative;
+    background-color: #14191f;
+}
+
+.nav-link{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    background-clip: text;
+    /* Définition de la couleur du texte avec les préfixes de fournisseurs */
+}
+a.nav-link, p.nav-link{
+    font-weight: bold;
+    cursor: pointer;
+    background-image: linear-gradient(60deg, #16a085 25%, #2980b9);
+}
+.nav-item {
+    position: relative; /* Assurez-vous que les éléments de navigation ont une position relative */
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    height: 0.1em;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(60deg, #16a085 25%, #2980b9);
+}
