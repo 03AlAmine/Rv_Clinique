@@ -1,75 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertical Text Carousel with Slick</title>
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
-    <style>
-        .slick-slide {
-            /* Set the height of each slide */
-            background-color: aqua;
-            line-height: 10vh;
-
-            /* Vertically center the text */
-            color: black !important;
-        }
-
-        .your-class {
-            display: flex;
-            /* Utiliser flexbox */
-            align-items: center;
-            /* Centrer verticalement */
-            justify-content: center;
-            /* Centrer horizontalement */
-            height: 15vh;
-            border: 2px solid black;
-            overflow: hidden;
-            width: 200px;
-            /* Pour cacher le contenu qui dépasse */
-        }
-    </style>
+    <title>Importer une photo de profil</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
+<style>
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .input-file {
+        display: none;
+    }
+
+    .file-label {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .file-label:hover {
+        background-color: #0056b3;
+    }
+
+    .btn {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+    #preview {
+        margin-top: 20px;
+    }
+
+    #preview img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
 <body>
+    <div class="container">
+        <h2>Importer une photo de profil</h2>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="fileToUpload" class="file-label">Choisir une photo</label>
+                <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" class="input-file"
+                    onchange="previewImage()">
+            </div>
 
-    <div class="your-class m-0 p-0">
-        <div>
-            Bienvenue sur notre site. Découvrez une nouvelle façon simple et efficace de prendre rendez-vous pour vos
-            consultations médicales.</div>
-        <div>
-            Notre plateforme vous offre une expérience pratique et rapide. Planifiez vos visites médicales en quelques
-            clics seulement.</div>
-        <div>
-            Simplifiez votre vie en prenant soin de votre santé dès aujourd'hui. Trouvez et réservez facilement vos
-            rendez-vous médicaux avec nos cliniques partenaires.</div>
-
+        </form>
+    </div>
+    <div id="preview">
+        <img src="" alt="Aperçu de la photo de profil" id="imagePreview">
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
-        $(document).ready(function () {
-            // Initialiser le carrousel slick
-            $('.your-class').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                vertical: true,
-                verticalSwiping: true,
-                dots: false,
-                infinite: true,
-                centerMode: true,
-                focusOnSelect: true,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                arrows: false,
-                adaptiveHeight: true // Activer la hauteur adaptative pour ajuster la hauteur des diapositives en fonction de leur contenu
-            });
-        });
+        function previewImage() {
+            var preview = document.querySelector('#imagePreview');
+            var file = document.querySelector('input[type=file]').files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
     </script>
 </body>
 

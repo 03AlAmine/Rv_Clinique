@@ -64,7 +64,7 @@
                 <section
                     class="navbar-nav col-md-3 d-flex p-0 ml-auto text-center  align-items-center justify-content-center">
                     <a class=" p-0 col-md-2" href="Se_connecter.html">
-                        <img class=" img-fluid p-0" src="Image/connexion.png" alt="Conn">
+                        <img class="img-fluid p-0" src="Image/connexion.png" alt="Conn">
                     </a>
                     <p class="nav-link p-0 m-0 w-auto">
                         <?php
@@ -72,15 +72,22 @@
 
                         if (isset($_SESSION['prenom'])) {
                             $prenom = $_SESSION['prenom'];
-                            echo " $prenom "; // Remplacez cette ligne par l'emplacement où vous souhaitez afficher le prénom de l'utilisateur
+                            echo " $prenom ";
+                            echo '<a><img id="logo" src="Image/logout.png" width="20" height="20" class=" "  alt="" onclick="deconnect()"></a>';
+                            echo '  <script>
+                                        function deconnect(){
+                                            if(confirm("Voulez-vous vous déconnecter ?")){
+                                                window.location.href ="Php/deconnexion.php?deconnexion=true";
+                                            }
+                                        }
+                                    </script>';
                         } else {
-                            echo "Bienvenue !"; // Message par défaut si la variable de session n'est pas définie
+                            echo "Bienvenue !";
                         }
-
                         ?>
+
                     </p>
                 </section>
-
             </div>
         </nav>
         <div>
@@ -90,9 +97,8 @@
                 <div class="mx-auto bg-dark" style="height: 25vh; width: 5px">
                 </div>
                 <div class="parag_slide mx-auto col-md-7 p-0">
-                    <h1 class="h1_slide">Bienvenue sur @Clinque.sn</h1>
+                    <h1 class="h1_slide nav-link m-0">Bienvenue sur @Clinque.sn</h1>
                     <div class="your-class  p-0">
-
                         <p>Choisissez parmi nos cliniques médicales</p>
 
                         <p>en quelques clics seulement.</p>
@@ -101,10 +107,9 @@
 
                         <p>les soins dont vous avez besoin,</p>
 
-                        <p>pratique et rapide</p>
+                        <p>pratique et rapide,</p>
 
                         <p>grâce à nos partenaires de confiance.</p>
-
                     </div>
 
                 </div>
@@ -179,34 +184,6 @@
     </div>
 
     <main class="contenair d-flex mt-1" id="main">
-        <section class=" p-1 d-flex flex-column justify-content-center" id="textandslide">
-            <div id="carouselExampleIndicators" class="carousel slide w-50  mb-1" data-ride="carousel">
-                <ol class="carousel-indicators ">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active bg-dark"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1" class=" bg-dark"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2" class=" bg-dark"></li>
-                </ol>
-                <div class="carousel-inner ">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100  img_slide" src="Image/Bg/appareil+.jpeg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100  img_slide" src="Image/Bg/bleu_personn.jpeg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100 img_slide" src="Image/Bg/blanc_perso.jpeg" alt="Third slide">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </section>
 
     </main>
 
@@ -221,7 +198,7 @@
                 <section class="navbar footer col-md-7 d-flex justify-content-center">
                     <ul class="navbar-nav footer text-light justify-content-center d-flex">
                         <li class="nav-item active ">
-                            <a class="nav-link text-light" href="Clinique.html">Home</a>
+                            <a class="nav-link text-light" href="Clinique.php">Home</a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link  text-light" href="#">About</a>
@@ -286,7 +263,7 @@
             centerMode: true,
             focusOnSelect: true,
             autoplay: true,
-            autoplaySpeed: 1000,
+            autoplaySpeed: 3000,
             arrows: false,
             adaptiveHeight: true, // Activer la hauteur adaptative pour ajuster la hauteur des diapositives en fonction de leur contenu
             swipe: false // Désactiver le défilement manuel
